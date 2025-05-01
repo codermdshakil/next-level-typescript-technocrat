@@ -1,12 +1,13 @@
 {
     /**
      * Never Unknown Nullable-type 
-     * 
-     * 
+     *
      * Any VS unknown
      * 
      * any = 🔓 Open box — you can do anything with it, even dangerous things.
      * unknown = 🔒 Locked box — you must open it carefully (check the type first).
+     * 
+     * Never type use :L when we 100% sure that it does not return something so here we can use never type
      * 
     */
 
@@ -41,8 +42,17 @@
         }
     };
     
-    const res1 = getSpeedInMeterPerSec('1000 kmh^-1');
-    console.log(res1);
+    // const res1 = getSpeedInMeterPerSec('1000 kmh^-1');
+    // console.log(res1);
+
+
+    // never type
+
+    const throwNewError = (msg:string):never => {
+        throw Error(msg);
+    };
+
+    // throwNewError("new Error occurs using never!")
 
 
 
