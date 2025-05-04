@@ -39,6 +39,8 @@
         friends:string[]
     }
 
+    // task - 4
+
 
 
 }
