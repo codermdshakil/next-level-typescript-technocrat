@@ -5,7 +5,7 @@
      * কাজ করবে Function এর মতো করে কিন্ত ব্যাবহার করতে পারব property এর মতো করে ।
      * 
      * - get - getter - to get value
-     * - set - setter - to set value
+     * - set - setter - to set value take one parameter
      * 
      * 
      * */
@@ -22,30 +22,26 @@
             this._balance = _balance;
         }
 
-        protected showBalance(){
-            return this._balance
+        get Balance(){
+            return this._balance;
         }
 
-        // add money
-        protected moneyDiposit(amount:number){
+        set AddAmount(amount:number){
             this._balance = this._balance + amount;
-            console.log(`Successfully added ${amount}. Now current Balance is ${this._balance}`);
+            console.log(`Successfully added ${amount}. Total balance is ${this._balance}`);
         }
 
-        // withdraw money
-        protected withdrawMoney(amount:number){
-            if(amount < this._balance){
-                this._balance = this._balance - amount;
-                console.log(`You withdraw money ${amount} tk. Now balance is ${this._balance} tk`);
-            }else{
-                console.log('You dont have enough Balance!');
-            }
-        }
+
+         
     }
 
     
 
     const goribManus = new BankAccount(111, 'Mr. Garib', 100);
+    // console.log(goribManus.Balance);
+    // goribManus.AddAmount(10); Error - because of getter setter - কাজ করবে Function এর মতো করে কিন্ত ব্যাবহার করতে পারব property এর মতো করে 
+    goribManus.AddAmount = 10; 
+    console.log(goribManus.Balance);
 
     
 }
